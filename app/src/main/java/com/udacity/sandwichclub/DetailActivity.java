@@ -3,6 +3,7 @@ package com.udacity.sandwichclub;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -67,19 +68,39 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void populateUI(Sandwich sandwich) {
+        TextView alsoKnownLabel = findViewById(R.id.also_known_label);
         TextView alsoKnownTv = findViewById(R.id.also_known_tv);
         List<String> alsoKnownAsList = sandwich.getAlsoKnownAs();
+        if (alsoKnownAsList.size() == 0) {
+            alsoKnownLabel.setVisibility(View.GONE);
+            alsoKnownTv.setVisibility(View.GONE);
+        }
         populateTextViewWithList(alsoKnownTv, alsoKnownAsList);
 
+        TextView placeOfOriginLabel = findViewById(R.id.place_of_origin_label);
         TextView placeOfOriginTv = findViewById(R.id.place_of_origin_tv);
+        if (sandwich.getPlaceOfOrigin().isEmpty()) {
+            placeOfOriginLabel.setVisibility(View.GONE);
+            placeOfOriginTv.setVisibility(View.GONE);
+        }
         placeOfOriginTv.setText(sandwich.getPlaceOfOrigin());
 
+        TextView ingredientsLabel = findViewById(R.id.ingredients_label);
         TextView ingredientsTv = findViewById(R.id.ingredients_tv);
         List<String> ingredientsList = sandwich.getIngredients();
+        if (ingredientsList.size() == 0) {
+            ingredientsLabel.setVisibility(View.GONE);
+            ingredientsTv.setVisibility(View.GONE);
+        }
         populateTextViewWithList(ingredientsTv, ingredientsList);
 
-        TextView description_tv = findViewById(R.id.description_tv);
-        description_tv.setText(sandwich.getDescription());
+        TextView descriptionLabel = findViewById(R.id.description_label);
+        TextView descriptionTv = findViewById(R.id.description_tv);
+        if (sandwich.getDescription().isEmpty()) {
+            descriptionLabel.setVisibility(View.GONE);
+            descriptionTv.setVisibility(View.GONE);
+        }
+        descriptionTv.setText(sandwich.getDescription());
 
     }
 
