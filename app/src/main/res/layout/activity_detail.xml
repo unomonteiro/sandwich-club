@@ -1,65 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_height="wrap_content"
     tools:context="com.udacity.sandwichclub.DetailActivity">
 
-    <ImageView
-        android:id="@+id/image_iv"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/sandwich_picture_content_description"
-        android:scaleType="centerCrop" />
-
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/detail_also_known_as_label"
-        android:textStyle="bold" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/also_known_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Bombay Burger, VadaPao, Wada Pav, Wada Pao"/>
+        <ImageView
+            android:id="@+id/image_iv"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/sandwich_picture_content_description"
+            android:scaleType="centerCrop" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detail_place_of_origin_label"
-        android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_also_known_as_label"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/place_of_origin_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="India"/>
+        <TextView
+            android:id="@+id/also_known_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Bombay Burger, VadaPao, Wada Pav, Wada Pao"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detail_ingredients_label"
-        android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_place_of_origin_label"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/ingredients_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Deep-fried mashed potato patty, chilli peppers, garlic, ginger, bread bun"/>
+        <TextView
+            android:id="@+id/place_of_origin_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="India"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detail_description_label"
-        android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_ingredients_label"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/description_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Vada Pav is a vegetarian fast food dish native to the Indian state of Maharashtra. The dish consists of a deep fried potato dumpling placed inside a bread bun (pav) sliced almost in half through the middle. It is generally accompanied with one or more chutneys and a green chilli pepper. It originated as cheap street food in Mumbai, but is now served in food stalls and restaurants across India. It is also called Bombay Burger in keeping with its origins and its resemblance in physical form to a burger."/>
+        <TextView
+            android:id="@+id/ingredients_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Deep-fried mashed potato patty, chilli peppers, garlic, ginger, bread bun"/>
 
-</LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_description_label"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/description_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Vada Pav is a vegetarian fast food dish native to the Indian
+                 state of Maharashtra. The dish consists of a deep fried potato dumpling
+                  placed inside a bread bun (pav) sliced almost in half through the middle.
+                  It is generally accompanied with one or more chutneys and a green chilli
+                   pepper. It originated as cheap street food in Mumbai, but is now served
+                    in food stalls and restaurants across India. It is also called Bombay
+                    Burger in keeping with its origins and its resemblance in physical
+                    form to a burger."/>
+
+    </LinearLayout>
+
+</ScrollView>
