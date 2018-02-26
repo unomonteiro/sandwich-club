@@ -3,6 +3,7 @@ package com.udacity.sandwichclub;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -75,7 +76,7 @@ public class DetailActivity extends AppCompatActivity {
             alsoKnownLabel.setVisibility(View.GONE);
             alsoKnownTv.setVisibility(View.GONE);
         }
-        populateTextViewWithList(alsoKnownTv, alsoKnownAsList);
+        alsoKnownTv.setText(TextUtils.join(", ", alsoKnownAsList));
 
         TextView placeOfOriginLabel = findViewById(R.id.place_of_origin_label);
         TextView placeOfOriginTv = findViewById(R.id.place_of_origin_tv);
@@ -92,7 +93,7 @@ public class DetailActivity extends AppCompatActivity {
             ingredientsLabel.setVisibility(View.GONE);
             ingredientsTv.setVisibility(View.GONE);
         }
-        populateTextViewWithList(ingredientsTv, ingredientsList);
+        ingredientsTv.setText(TextUtils.join(", ", ingredientsList));
 
         TextView descriptionLabel = findViewById(R.id.description_label);
         TextView descriptionTv = findViewById(R.id.description_tv);
@@ -102,15 +103,5 @@ public class DetailActivity extends AppCompatActivity {
         }
         descriptionTv.setText(sandwich.getDescription());
 
-    }
-
-    private void populateTextViewWithList(TextView textView, List<String> listOfStrings) {
-        for (int i = 0; i < listOfStrings.size(); i++) {
-            String alsoKnowAs = listOfStrings.get(i);
-            if (i > 0 ) {
-                textView.append(", ");
-            }
-            textView.append(alsoKnowAs);
-        }
     }
 }
